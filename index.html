@@ -945,17 +945,7 @@ margin: 0 5px;
     if (Object.values(data).some(x => !x)) {
       alert("Please fill all fields.");
       return;
-    }
-    // IMPORTANT: Replace "YOUR_SCRIPT_URL" with your actual Google Apps Script Web App URL
-    fetch("https://script.google.com/macros/s/AKfycbwJ5W55wx7m4XwUEGp9FZL1Xx9vFS3kEs9DSf-PLnx8CYz1r4Xm8wg_c2b8QtgbeEpEjA/exec", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify(data)
-    })
-    .then(r => r.text())
-    .then(() => showSection("payment-section"))
-    .catch(() => alert("Error saving details."));
-  }
+      }
 
   function confirmOrder() {
     const method = document.querySelector('input[name="payment"]:checked');
